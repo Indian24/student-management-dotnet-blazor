@@ -21,9 +21,7 @@ It contains a backend **ASP.NET Core Web API** (Domain-Driven Design, CQRS + Med
 * [Testing (Unit / Integration / Acceptance)](#testing-unit--integration--acceptance)
 * [Configuration & environment variables](#configuration--environment-variables)
 * [Troubleshooting & common issues](#troubleshooting--common-issues)
-* [Contributing](#contributing)
-* [License & credits](#license--credits)
-* [Contact / Support](#contact--support)
+
 
 ---
 
@@ -316,33 +314,6 @@ Please follow the repository's code style and open an issue before major changes
 
 ---
 
-## CI / CD (recommended)
-
-* Add a GitHub Actions pipeline to build and run tests on PRs:
-
-  * `dotnet restore`
-  * `dotnet build --configuration Release`
-  * `dotnet test`
-  * Optionally: build Docker images and push to registry
-
-If you want, I can provide a ready-to-use GitHub Actions workflow for building, testing and pushing Docker images.
-
----
-
-## License & credits
-
-This project is available under the **MIT License**. See `LICENSE` file for full terms.
-
----
-
-## Contact / Support
-
-If you want:
-
-* a trimmed “how to get this working in 2 minutes” checklist,
-* help seeding demo students,
-* a GitHub Actions CI pipeline, or
-* a short video walkthrough — tell me which and I’ll draft it.
 
 ---
 
