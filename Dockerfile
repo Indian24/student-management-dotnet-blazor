@@ -1,11 +1,18 @@
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /src
+
 COPY . .
-RUN dotnet restore server/src/WebAPI/WebAPI.csproj
-RUN dotnet publish server/src/WebAPI/WebAPI.csproj -c Release -o /app/publish
+
+WORKDIR /src/client/src/WebUI
+RUN dotnet restore
+RUN dotnet publish -c Release -o /app
 
 FROM mcr.microsoft.com/dotnet/aspnet:8.0
 WORKDIR /app
-COPY --from=build /app/publish .
+
+COPY --from=build /app .
+
+ENV ASPNETCORE_URLS=http://+:8080
 EXPOSE 8080
-ENTRYPOINT ["dotnet", "WebAPI.dll"]
+
+ENTRYPOINT ["dotnet", "WebUI.dll"]
