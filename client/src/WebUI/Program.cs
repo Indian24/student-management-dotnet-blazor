@@ -10,7 +10,7 @@ builder.RootComponents.Add<HeadOutlet>("head::after");
 
 builder.Services.AddScoped(sp => new HttpClient
 {
-    BaseAddress = new Uri("http://localhost:5000/")
+    BaseAddress = new Uri("https://student-management-dotnet-blazor-production.up.railway.app/")
 });
 
 builder.Services.AddScoped<StudentService>();
